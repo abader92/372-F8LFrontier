@@ -17,8 +17,9 @@ public class WeaponDAOImpl implements WeaponDAO {
 		String[] args = new String[numArgs];
 		int lastIndex = 0;
 		for(int i = 0; i < numArgs; i++) {
-			int thisIndex = input.substring(lastIndex, input.length()).indexOf("/t");
+			int thisIndex = input.substring(lastIndex, input.length()).indexOf("\t");
 			if (thisIndex == -1) thisIndex = input.length();
+			else thisIndex += lastIndex;
 			args[i] = input.substring(lastIndex, thisIndex);
 			lastIndex = thisIndex + 1;
 		}

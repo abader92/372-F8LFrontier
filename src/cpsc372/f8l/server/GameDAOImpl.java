@@ -24,7 +24,7 @@ public class GameDAOImpl implements GameDAO {
 		textReader.readLine();
 		String input = textReader.readLine();
 		
-		int lastSpace = input.lastIndexOf("\n");
+		int lastSpace = input.lastIndexOf("\t");
 		String title = input.substring(0, lastSpace);
 		int date = Integer.parseInt(input.substring(lastSpace + 1));
 		

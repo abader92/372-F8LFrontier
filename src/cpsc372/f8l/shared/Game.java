@@ -23,6 +23,16 @@ public class Game {
 		ships = new ArrayList<Ship>();
 		players = new ArrayList<Player>();
 	}
+	
+	public Ship[] getShipsByEmpire(Empire e) {
+		ArrayList<Ship> sbe = new ArrayList<Ship>();
+		for (Ship s: ships) {
+			if(s.getType().getEmpire().getId().equals(e.getId())) {
+				sbe.add(s);
+			}
+		}
+		return (Ship[]) sbe.toArray();
+	}
 
 	
 	public Empire findEmpire(String id){
