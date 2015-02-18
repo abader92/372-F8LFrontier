@@ -1,0 +1,93 @@
+
+public class UniverseReport {
+	public static void main(String[] args){
+		
+		int i = 0, j = 0, k = 0, l = 0, m = 0, n = 0;
+		Player myPlayer = new Player(null, null, null);
+		Game myGame = new Game(null, i);
+		Empire myEmpire = new Empire(null, null, null);
+		WeaponType myWeaponType = new WeaponType(null);
+		Weapon myWeapon = new Weapon(null, null, myWeaponType, i);
+		ShipType myShipType = new ShipType(null, null, null, myEmpire, i, i, i, null, null, i);
+		Ship myShip = new Ship(i, myShipType, null, i, i, null, i);
+		Location myLocation = new Location(i, i, i, i);
+		int totalEmpires = myGame.getEmpires().size();
+		int totalShips = myGame.getShips().size();
+		int totalPlayers = myGame.getPlayers().size();
+	
+		System.out.println("Universe Report");
+		System.out.println("----------------");
+		System.out.println("Universe Name: " + myGame.getName());
+		System.out.println("Stardate: " + myGame.getStarDate());
+		
+		
+		System.out.println("");
+		System.out.println("Ship Classes:");
+		for(i = 0; i < totalEmpires; i++){
+			System.out.println("* " + myEmpire.getName());
+			//Fix to start checking for ships in empire or check # of ships in empire for loop no while
+			for(j = 0; j < totalShips; j++){
+				System.out.println("  - " + myShipType.getName() + " - " );
+				System.out.printf("Need a getter for total number of these ships");
+				/*if(getter above == 1){
+					System.out.printf("ship");
+				}
+				else{
+					System.out.printf("ships");
+				}*/
+				System.out.println("     + Max Energy: " + myShipType.getMaxEnergy());
+				System.out.printf("; Speed: " + myShipType.getMaxSpeed());
+				System.out.printf("; Shields: " + myShipType.maxShield);
+				System.out.printf("; Missiles: " + myShipType.getMaxMissile());
+				System.out.println("     + Weapon 1: " + myWeapon.getWeaponType() + " (" + myShipType.getEnergyWeapon() + ", " + myWeapon.getMaxYield() + ")");
+				System.out.println("     + Weapon 2: " + myWeapon.getWeaponType() + " (" + myShipType.getMissileWeapon() + ", " + myWeapon.getMaxYield() + ")");
+			}
+		}
+		
+		
+		System.out.println("");
+		System.out.println("Players:");
+		for(k = 0; k < totalPlayers; k++){
+			System.out.println("* " + myPlayer.getId() + ": " + myPlayer.getEmpire() + " piloting a " + myShip.getType() + " (" + myShip.getClass() + ")");
+			System.out.println("   + Location: Sector (" + myLocation.getSx() + "," + myLocation.getSy() + ") Subsector (" + myLocation.getPx() + "," + myLocation.getPy() + ")" );
+			System.out.println("   + Alert status: " + myShip.getAlert());
+			System.out.println("   + Energy: " + myShip.getEnergy() + "; Sheild: " + myShip.getShield() + "; Missiles: " + myShip.getMissiles());
+		}
+		//For empire type list the energy, speed, shield, and max missiles then the weapon types then next ship if that empire has another
+		//Print a new line after done describing the weapons
+		//Next list the player, their federation, ship they are piloting
+		//Give location in sector and subsector
+		//Give their alert status 
+		//Then give current energy, shield, and missiles
+		//Print another new line after done with current player
+		//Lastly print the grid and where each ship is in the big sector section
+		//Figure out what 1/1 and 1/0 mean beside each ship
+		
+		
+		System.out.println("");
+		System.out.println("Sector Summary:");
+		//int grid[][] = new int[9][9];
+
+		/*for(l = 1; l < grid.length; ++l) {
+		    for(m = 1; m < grid.length; ++m) {
+		        // Do whatever with grid[i][j] here
+		    	System.out.println(" |---" + m);
+				System.out.println(l + "|");
+				System.out.println(" |");
+				System.out.println(" |");
+		    }
+		}*/
+		for(l = 1; l <= 8; l ++){
+			System.out.println(" |---1---+---2---+---3---+---4---+---5---+---6---+---7---+---8---");
+			System.out.println(l + "|");
+			System.out.println(" |");
+			System.out.println(" |");
+		}
+		
+		System.out.println("");
+		System.out.println("Key:");
+		for(n = 0; n < totalEmpires; n++){
+			System.out.println("* " + myGame.getEmpires().toString().charAt(0) + " - " + myGame.getEmpires().toString());
+		}
+	}
+}
