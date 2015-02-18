@@ -12,7 +12,7 @@ public class ShipType {
 	Weapon missileWeapon;
 	int maxMissile;
 	
-	ShipType (String id, String name, String classification, 
+	public ShipType (String id, String name, String classification, 
 			Empire empire, int maxEnergy, int maxSpeed,
 			int maxShield, Weapon energyWeapon, Weapon missileWeapon,
 			int maxMissile) {

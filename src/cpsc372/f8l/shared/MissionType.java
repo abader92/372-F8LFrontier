@@ -4,7 +4,7 @@ public class MissionType {
 
 	String name;
 	
-	MissionType (String name) {
+	public MissionType (String name) {
 		this.name = name;
 	}
 	

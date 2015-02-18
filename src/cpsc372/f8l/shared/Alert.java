@@ -42,12 +42,12 @@ public class Alert {
 		level = Level.GREEN;
 	}
 	
-	Alert (String alevel) {
+	public Alert (String alevel) {
 		if(alevel.equals(Level.GREEN.getName())) {
 			level = Level.GREEN;
 		} else if (alevel.equals(Level.YELLOW.getName())) {
 			level = Level.YELLOW;
-		} else if (alevel.equals(Level.RED.getName())) {
+		} else /*if (alevel.equals(Level.RED.getName()))*/ {
 			level = Level.RED;
 		}
 	}

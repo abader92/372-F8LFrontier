@@ -13,7 +13,7 @@ public class Game {
 	int starDate;
 	String name;
 	
-	Game (String name, int starDate) {
+	public Game (String name, int starDate) {
 		this.name = name;
 		this.starDate = starDate;
 		empires = new ArrayList<Empire>();
@@ -24,6 +24,35 @@ public class Game {
 		players = new ArrayList<Player>();
 	}
 
+	
+	public Empire findEmpire(String id){
+		for (Empire e: empires)
+			if(e.getId().equals(id))
+				return e;
+		return null;
+	}
+	
+	public ShipType findShipType(String id){
+		for (ShipType st: shipTypes)
+			if(st.getId().equals(id))
+				return st;
+		return null;
+	}
+	
+	public Weapon findWeaponType(String id){
+		for (Weapon w: weaponTypes)
+			if(w.getId().equals(id))
+				return w;
+		return null;
+	}
+	
+	public Ship findShip(int id){
+		for (Ship s: ships)
+			if(s.getId() == id)
+				return s;
+		return null;
+	}
+	
 	
 	public String getName() {
 		return name;
