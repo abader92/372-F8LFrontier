@@ -1,10 +1,12 @@
+
 public class UniverseReport {
 	public static void main(String[] args){
 		
 		int i = 0, j = 0, k = 0, l = 0, m = 0, n = 0;
 		Player myPlayer = new Player(null, null, null);
-		Game myGame = new Game(null, i);
-		Empire myEmpire = new Empire(null, null, null);
+		Game myGame = new Game("Star Trek Forever", 2236);
+		MissionType myMissionType = new MissionType(null);
+		Empire myEmpire = new Empire(null, null, myMissionType);
 		WeaponType myWeaponType = new WeaponType(null);
 		Weapon myWeapon = new Weapon(null, null, myWeaponType, i);
 		ShipType myShipType = new ShipType(null, null, null, myEmpire, i, i, i, null, null, i);
